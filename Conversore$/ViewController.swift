@@ -24,7 +24,31 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    
+    @IBAction func showBack(_ sender: UIButton) {
+        switch lbUnit.text! {
+            case "Temperatura":
+                lbUnit.text = "Distância"
+                btUnit1.setTitle("Metro", for: .normal)
+                btUnit2.setTitle("Kilômetro", for: .normal)
+            case "Distância":
+                lbUnit.text = "Moeda"
+                btUnit1.setTitle("Real", for: .normal)
+                btUnit2.setTitle("Dólar", for: .normal)
+            case "Moeda":
+                lbUnit.text = "Peso"
+                btUnit1.setTitle("Kilograma", for: .normal)
+                btUnit2.setTitle("Libra", for: .normal)
+            default:
+                lbUnit.text = "Temperatura"
+                btUnit1.setTitle("Celcius", for: .normal)
+                btUnit2.setTitle("Faranheint", for: .normal)
+        
+        }
+        convert(nil)
+    }
+    
+    
     @IBAction func showNext(_ sender: UIButton) {
         switch lbUnit.text! {
             case "Temperatura":
